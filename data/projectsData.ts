@@ -1,19 +1,15 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Basic MERN blog',
+    description: `A basic blog built with the MERN stack. It uses authentication with password hashing. A work in progress and will be updated.`,
+    imgSrc: '/static/images/mern-blog_app.png',
+    href: 'https://github.com/styrbjorne/mern-blog/',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Practice Responsive Portfolio',
+    description: `An assignment for freeCodeCamp written in HTML & CSS. The goal was to make a responsive portfolio page.`,
+    imgSrc: '/static/images/freeCodeCamp_responsive_portfolio.png',
+    href: 'https://styrbjorne.github.io/practice-responsive-portfolio/',
   },
 ]
 
