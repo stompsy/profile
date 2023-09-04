@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'My personal profile and blog detailing my life as a Paramedic and Product Developer',
   language: 'en-us',
   theme: 'dark', // system, dark or light
-  siteUrl: 'dbgerdes.vercel.app',
+  siteUrl: 'https://dbgerdes.vercel.app/',
   siteRepo: 'https://github.com/styrbjorne/profile',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
