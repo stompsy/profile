@@ -1,0 +1,65 @@
+---
+title: Using Static Files in Django
+date: '2023-12-16'
+tags: ['django', 'code', 'features']
+lastmod: '2023-12-17'
+draft: False
+summary: Leverage static files in Django by establishing a "static" directory in your app, organizing resources, configuring "STATICFILES_DIRS," and using the "{% load static %}" template tag to seamlessly integrate and enhance web development efficiency.
+---
+
+## Static files (CSS, JavaScript, Images, etc.)
+
+Django collects static files from each of your applications (and other places you specify) into a single location that can easily be served in production. Django provides [django.contrib.staticfiles](https://docs.djangoproject.com/en/5.0/ref/contrib/staticfiles/#module-django.contrib.staticfiles) to help you manage them.
+
+## INSTALLED_APPS
+
+Open `name_of_your_project` > `settings.py` and make sure that `django.contrib.staticfiles` is in the `INSTALLED_APPS` section.
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    #
+    'django.contrib.staticfiles',
+    #
+    # My Apps
+    'projects',
+]
+```
+
+## `static` Directory
+
+Next, adjust your directory structure to include the `static` directory.
+Inside the static directory, place an application folder with the same
+name as your application. I.e. `projects` -> `static` -> `projects`. Place
+your static files inside this directory.
+
+```file
+django-portfolio/
+├─ .env/
+├─ portfolio/
+│  ├─ __init.py__
+│  ├─ asgi.py
+│  ├─ settings.py
+│  ├─ urls.py
+│  ├─ wsgi.py
+├─ projects/
+│  ├─ migrations/
+│  ├─ static/
+│  │  ├─ projects/
+│  │  │  ├─ javascript_file.js
+│  │  │  ├─ styles.css
+│  │  │  ├─ picture.jpg
+│  ├─ templates/
+├─ .gitignore
+├─ db.sqlite3
+├─ main.py
+├─ manage.py
+```
+
+Your project and application names will likely be different than
+the example, but it should look something like the directory
+structure above.
