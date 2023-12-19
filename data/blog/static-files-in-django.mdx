@@ -15,22 +15,26 @@ Django collects static files from each of your applications (and other places yo
 
 Open `name_of_your_project` > `settings.py` and make sure that `django.contrib.staticfiles` is in the `INSTALLED_APPS` section.
 
-```python
+```diff:settings.py
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    #
-    'django.contrib.staticfiles',
-    #
++   'django.contrib.staticfiles',
     # My Apps
     'projects',
 ]
 ```
 
-## `static` Directory
+While you're in `settings.py`, scroll down and look for `STATIC_URL`. Make sure it is set to `"static/"`.
+
+```python:settings.py
+STATIC_URL = "static/"
+```
+
+## Static Directory
 
 Next, adjust your directory structure to include the `static` directory.
 Inside the static directory, place an application folder with the same
@@ -54,6 +58,8 @@ django-portfolio/
 │  │  │  ├─ styles.css
 │  │  │  ├─ picture.jpg
 │  ├─ templates/
+│  │  ├─ projects/
+│  │  │  ├─ index.html
 ├─ .gitignore
 ├─ db.sqlite3
 ├─ main.py
@@ -63,3 +69,24 @@ django-portfolio/
 Your project and application names will likely be different than
 the example, but it should look something like the directory
 structure above.
+
+In your template file, i.e. index.html in your `projects/templates/projects/` directory,
+use the following code to include the file:
+
+```html:index.html
+    <head>
+        {% load static %}
+        <script src="{% static 'projects/color-modes.js' %}"></script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Working - Django Bootstrap Portfolio Example</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'projects/styles.css' %}" type="text/css" />
+    </head>
+```
