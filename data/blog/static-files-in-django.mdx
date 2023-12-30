@@ -1,8 +1,8 @@
 ---
-title: Using Static Files in Django
+title: 'Using Static Files in Django'
 date: '2023-12-16'
-tags: ['django', 'code', 'features']
 lastmod: '2023-12-17'
+tags: ['django', 'code', 'features']
 draft: False
 summary: Leverage static files in Django by establishing a "static" directory in your app, organizing resources, configuring "STATICFILES_DIRS," and using the "{% load static %}" template tag to seamlessly integrate and enhance web development efficiency.
 ---
@@ -15,7 +15,7 @@ Django collects static files from each of your applications (and other places yo
 
 Open `name_of_your_project` > `settings.py` and make sure that `django.contrib.staticfiles` is in the `INSTALLED_APPS` section.
 
-```diff:settings.py
+```diff-python:settings.py
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -86,7 +86,6 @@ use the following code to include the file:
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-        {% load static %}
         <link rel="stylesheet" href="{% static 'projects/styles.css' %}" type="text/css" />
     </head>
 ```

@@ -1,0 +1,48 @@
+---
+title: 'Anaconda not found in zsh'
+date: '2023-12-29'
+lastmod: '2023-12-29'
+tags: ['anaconda', 'tip', 'linux', 'ubuntu', 'zsh']
+draft: False
+summary: 'Install`ed Anaconda in Ubuntu >= 23.10, run fish or z shells, and conda cannot be found? Follow these simple steps to fix it!'
+---
+
+## Download Anaconda
+
+Follow this link to download Anaconda for your platform:
+
+- [Anaconda Installers](https://www.anaconda.com/download#downloads)
+
+## Install Anaconda
+
+At the time of writing this tip, _Anaconda Python 3.11_ file version is `Anaconda3-2023.09-0-Linux-x86_64.sh`. Run the command below in your terminal:
+
+```sh
+bash Anaconda3-2023.09-0-Linux-x86_64.sh
+```
+
+Close/re-open terminal and type `conda -V`. Console should spit out something like:
+
+```sh
+(base) ➜  ~ conda -V
+conda 23.7.4
+(base) ➜  ~
+```
+
+## Console RARY angry "command not found"
+
+Try:
+
+```sh
+~/anaconda3/bin/conda init zsh
+```
+
+_or_
+
+```sh
+/home/<your username>/anaconda3/bin/conda init zsh
+```
+
+## Using with fish shell
+
+- [Installing on Linux: Using with Fish shell](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html#using-with-fish-shell)
