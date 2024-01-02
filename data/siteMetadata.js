@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'dbgerdes Dev Notes',
   author: 'Brian Gerdes',
   headerTitle: 'dbgerdes Dev Notes',
-  description: 'My personal profile and blog detailing my life as a Paramedic and Product Developer',
+  description: 'My personal profile and blog',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://dbgerdes.vercel.app/',
@@ -11,8 +11,8 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@stompsy',
-  email: 'https://dbgerdes.vercal.app',
-  github: 'https://github.com/styrbjorne',
+  email: 'brian.gerdes@protonmail.com',
+  github: 'https://github.com/stompsy',
   twitter: 'https://twitter.com/styrbjorne',
   facebook: 'https://www.facebook.com/Styrbjorne',
   youtube: 'https://www.youtube.com/@initpy',
@@ -61,7 +61,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'dark',
+      theme: 'preferred_color_scheme',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`
