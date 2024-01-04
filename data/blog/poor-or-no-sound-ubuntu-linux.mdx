@@ -1,0 +1,61 @@
+---
+title: 'Poor or No Sound in Ubuntu Linux'
+date: 2024-01-03T14:53:52Z
+lastmod: '2024-01-03'
+tags: ['linux', 'ubuntu', 'sound', 'tips']
+draft: false
+summary: "If you're experiencing poor or no sound when playing games or media in Ubuntu Linux 23.04+, try these simple steps before attempting anything drastic!"
+layout: PostLayout
+---
+
+## How To Fix Sound Issues
+
+I have only tested this using Ubuntu 23.04 & 23.10. If you are having trouble with your sound, try the following methods to fix the problem. My problem was the sound was working fine in browsers and most applications, but either getting **garbled**, or **no** sound in games.
+
+## Low sound output
+
+Make sure you are using the correct **Output Device**. Many computers have multiple. I have built-in HD Audio, HDMI audio output, and my Webcam available on my desktop computer. And I have built-in audio and my earbuds available on my laptop.
+
+**Settings**: Search for applications (Windows key on your keyboard and type '**Settings**') or click your '**Show Apps**' button in the lower left corner of your screen.
+![Image of settings window - sound tab](/static/images/linux-sound-issues.png)
+If you do not have any output options listed (except a dummy output), try to force reload **alsa** with:
+
+```bash
+sudo alsa force-reload
+```
+
+And then reboot your computer. Check audio or sound settings again. If still not working try:
+
+```bash
+pulseaudio --start
+```
+
+Another option to try is **alsamixer** by running:
+
+```bash
+alsamixer
+```
+
+![Image of Alsamixer window](/static/images/linux-sound-issues-alsamixer.png)
+
+You'll likely see more options than this if you're using built-in audio. It will show more channels. For instance **Master**, **Headphone**, **Speaker**, **PCM**, etc. Make sure **Master** or **Speaker** are not muted or turned down very low. After adjusting channels, press '**ESC**' key to exit. Try playing audio.
+
+## Getting hardware information
+
+Knowing your hardware details may help when looking for solutions to common driver problems in Ubuntu and Linux in general. I use the **inxi** tool for this. You can install it using **apt**.
+
+```shell
+sudo apt-get install inxi
+```
+
+Run the **inxi** tool to check your hardware information using:
+
+```shell
+inxi -SMA
+```
+
+![Image of inxi output in terminal](/static/images/linux-sound-issues-inxi-output.png)
+
+If these basic ideas/fixes don't work for you, visit the [Ubuntu](https://ubuntuforums.org/forumdisplay.php?f=332&s=408d76d27f9a4a09a74ac29c3af69621) (hardware forum). You will likely find a solution already posted. If not, the community here are very helpful and they will help answer your questions.
+
+Good Luck!
