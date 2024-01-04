@@ -1,10 +1,11 @@
 ---
 title: 'Using Static Files in Django'
 date: '2023-12-16'
-lastmod: '2023-12-17'
+lastmod: '2024-01-03'
 tags: ['django', 'code', 'features']
 draft: False
 summary: Leverage static files in Django by establishing a "static" directory in your app, organizing resources, configuring "STATICFILES_DIRS," and using the "{% load static %}" template tag to seamlessly integrate and enhance web development efficiency.
+layout: PostLayout
 ---
 
 ## Static files (CSS, JavaScript, Images, etc.)
@@ -13,7 +14,7 @@ Django collects static files from each of your applications (and other places yo
 
 ## INSTALLED_APPS
 
-Open `name_of_your_project` > `settings.py` and make sure that `django.contrib.staticfiles` is in the `INSTALLED_APPS` section.
+Open **name_of_your_project** > **settings.py** and make sure that `django.contrib.staticfiles` is in the **INSTALLED_APPS** section.
 
 ```diff-python:settings.py
 INSTALLED_APPS = [
@@ -28,7 +29,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-While you're in `settings.py`, scroll down and look for `STATIC_URL`. Make sure it is set to `"static/"`.
+While you're in **settings.py**, scroll down and look for **STATIC_URL**. Make sure it is set to `"static/"`.
 
 ```python:settings.py
 STATIC_URL = "static/"
@@ -36,9 +37,9 @@ STATIC_URL = "static/"
 
 ## Static Directory
 
-Next, adjust your directory structure to include the `static` directory.
+Next, adjust your directory structure to include the **static** directory.
 Inside the static directory, place an application folder with the same
-name as your application. I.e. `projects` -> `static` -> `projects`. Place
+name as your application. I.e. **projects** -> **static** -> **projects**. Place
 your static files inside this directory.
 
 ```file
@@ -70,7 +71,7 @@ Your project and application names will likely be different than
 the example, but it should look something like the directory
 structure above.
 
-In your template file, i.e. index.html in your `projects/templates/projects/` directory,
+In your template file, i.e. index.html in your **projects/templates/projects/** directory,
 use the following code to include the file:
 
 ```html:index.html

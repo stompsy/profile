@@ -513,7 +513,7 @@ const techStack = [
   // 'PyTorch',
   // 'Streamlit',
   'PostgreSQL',
-  'MySQL',
+  // 'MySQL',
   'MongoDB',
   // 'Firebase',
   // 'FastAPI',
